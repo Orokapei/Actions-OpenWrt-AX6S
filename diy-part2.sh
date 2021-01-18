@@ -16,4 +16,4 @@
 # LAN IP
 sed -i 's/192.168.1.1/192.168.17.1/g' package/base-files/files/bin/config_generate
 # rc.local
-sed -i '3i\wifi up' package/base-files/files/etc/rc.local
+#sed -i '3i\wifi up' package/base-files/files/etc/rc.local
