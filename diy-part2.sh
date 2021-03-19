@@ -19,5 +19,5 @@ sed -i 's/192.168.1.1/192.168.17.1/g' package/base-files/files/bin/config_genera
 sed -i '/timezone='\''UTC'\''/a\\t\tset system.@system[-1].zonename='\''Asia/Shanghai'\''' package/base-files/files/bin/config_generate
 sed -i '/timezone='\''UTC'\''/s/UTC/CST-8/' package/base-files/files/bin/config_generate
 # wifi
-sed -n '/set wireless.radio${devidx}.disabled=1/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/set wireless.radio${devidx}.disabled=1/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '3i\wifi' package/base-files/files/etc/rc.local
