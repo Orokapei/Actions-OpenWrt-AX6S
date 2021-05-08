@@ -13,6 +13,10 @@ name: Actions-test
 on:
   workflow_dispatch:
     inputs:
+      ssh_head:
+        description: 'SSH connection to Actions Head'
+        required: false
+        default: 'false'
       ssh:
         description: 'SSH connection to Actions'
         required: false
@@ -37,6 +41,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@main
+
+    - name: SSH connection to Actions Head
+      uses: P3TERX/ssh2actions@v1.0.0
+      if: github.event.inputs.ssh_head == 'true' && github.event.inputs.ssh_head  != 'false'
+      env:
+        TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
 
     - name: Initialization environment
       env:
@@ -129,5 +140,5 @@ jobs:
     - name: Delete workflow runs
       uses: Mattraks/delete-workflow-runs@main
       with:
-        retain_days: 30
+        retain_days: 1
         keep_minimum_runs: 3
