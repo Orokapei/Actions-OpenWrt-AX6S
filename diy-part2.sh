@@ -20,5 +20,5 @@ sed -i '/timezone='\''UTC'\''/a\\t\tset system.@system[-1].zonename='\''Asia/Sha
 sed -i '/timezone='\''UTC'\''/s/UTC/CST-8/' package/base-files/files/bin/config_generate
 # wifi
 sed -i '/set wireless.radio${devidx}.disabled=1/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-#upgrade keepfiles
-sed -i '4i\rm -rf /lib/upgrade/keed.d/*' package/base-files/files/etc/rc.local
+#rc.local
+sed -i '4i\rm -rf /lib/upgrade/keed.d/*\nwifi' package/base-files/files/etc/rc.local
