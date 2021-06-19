@@ -21,4 +21,4 @@ sed -i '/timezone='\''UTC'\''/s/UTC/CST-8/' package/base-files/files/bin/config_
 # wifi
 sed -i '/set wireless.radio${devidx}.disabled=1/d' package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #rc.local
-sed -i '4i\rm -rf /lib/upgrade/keed.d/*\nwifi' package/base-files/files/etc/rc.local
+sed -i '4i\rm -rf /lib/upgrade/keep.d/*\nwifi' package/base-files/files/etc/rc.local
