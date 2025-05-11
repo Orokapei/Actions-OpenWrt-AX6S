@@ -22,8 +22,8 @@
 # LAN IP
 sed -i 's/192.168.1.1/192.168.17.1/g' package/base-files/files/bin/config_generate
 # Timezone
-sed -i '/timezone='\''UTC'\''/a\\t\tset system.@system[-1].zonename='\''Asia/Shanghai'\''' package/base-files/files/bin/config_generate
-sed -i '/timezone='\''UTC'\''/s/UTC/CST-8/' package/base-files/files/bin/config_generate
+sed -i 's/UTC/Asia\/Shanghai/g' package/base-files/files/bin/config_generate
+sed -i 's/GMT0/CST-8/g' package/base-files/files/bin/config_generate
 # wifi
 sed -i '/set ${s}.disabled=/d' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #rc.local
