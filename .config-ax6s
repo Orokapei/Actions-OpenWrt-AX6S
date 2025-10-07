@@ -4,15 +4,27 @@ CONFIG_TARGET_mediatek_mt7622_DEVICE_xiaomi_redmi-router-ax6s=y
 CONFIG_LINUX_6_12=y
 # CONFIG_TARGET_ROOTFS_INITRAMFS is not set
 CONFIG_EXPERIMENTAL=y
+
 CONFIG_PACKAGE_bash=y
 CONFIG_PACKAGE_ca-certificates=y
+CONFIG_PACKAGE_ca-bundle=y
 CONFIG_PACKAGE_curl=y
 # CONFIG_PACKAGE_dnsmasq is not set
 CONFIG_PACKAGE_dnsmasq-full=y
+
+CONFIG_PACKAGE_luci=y
+CONFIG_LUCI_LANG_zh_Hans=y
+
+CONFIG_PACKAGE_openssh-sftp-server=y
+
 CONFIG_PACKAGE_kmod-nft-netdev=y
 CONFIG_PACKAGE_kmod-nft-tproxy=y
 CONFIG_PACKAGE_kmod-tun=y
-CONFIG_PACKAGE_luci=y
-# CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_openssh-sftp-server=y
-CONFIG_LUCI_LANG_zh_Hans=y
+
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_kmod-inet-diag=y
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_ruby=y
+CONFIG_PACKAGE_ruby-yaml=y
