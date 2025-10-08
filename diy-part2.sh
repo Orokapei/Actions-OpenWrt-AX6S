@@ -28,3 +28,5 @@ sed -i 's/GMT0/CST-8/g' package/base-files/files/bin/config_generate
 sed -i '/set ${s}.disabled=/d' package/network/config/wifi-scripts/files/lib/wifi/mac80211.uc
 #rc.local
 sed -i '4i\rm -rf /lib/upgrade/keep.d/*\nwifi' package/base-files/files/etc/rc.local
+#fix Rust Build
+sed -i 's/--set=llvm.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/g' feeds/packages/lang/rust/Makefile
